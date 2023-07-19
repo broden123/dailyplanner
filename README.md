@@ -2,6 +2,8 @@
 
 ## Description
 
+    The challenge for this week was to code a planner that interacts with DayJS to change style elements and store and extract information from local storage
+
 ## Installation
 
 This repo can be downloaded at https://github.com/broden123/week5challenge

@@ -22,9 +22,13 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
   var today = dayjs();
-  $("#currentDay").text(today.format("hh:mm A MMM D, YYYY"));
+  $("#currentDay").text(today.format("MMM D, YYYY"));
   var curTime = today.format("HH");
   console.log(curTime);
+
+  if (curTime === 0) {
+    localStorage.clear();
+  }
 
   for (let i = 0; i < 24; i++) {
     var checkHour = document.getElementById("hour-" + i);
@@ -37,16 +41,22 @@ $(function () {
       $(checkHour).addClass("present");
     }
   }
+  for (let i = 0; i < 24; i++) {
+    var storageCheck = localStorage.getItem("hour-" + i);
+    var checkHour = document.getElementById("hour-" + i);
+    var textArea = checkHour.querySelector("textarea");
+    if (storageCheck != null) {
+      textArea.textContent = storageCheck;
+    }
+  }
 
   for (let i = 0; i < 24; i++) {
     var checkHour = document.getElementById("hour-" + i);
     var saveButton = checkHour.querySelector("button");
-    var textIn = checkHour.getElementsByTagName("textarea");
-    console.log(textIn);
-    var plan = textIn.value;
+    var textArea = checkHour.querySelector("textarea");
     saveButton.addEventListener("click", function () {
-      localStorage.setItem("hour" + i, plan);
-      console.log("idk");
+      localStorage.setItem("hour-" + i, $("textArea").val());
+      console.log("event test");
     });
   }
 });
