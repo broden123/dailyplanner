@@ -2,7 +2,7 @@
 
 ## Description
 
-    The challenge for this week was to code a planner that interacts with DayJS to change style elements and store and extract information from local storage
+The challenge for this week was to code a planner that interacts with DayJS to change style elements and store and extract information from local storage
 
 ## Installation
 
@@ -16,4 +16,4 @@ info for creating a for loop with document.getElementById was found on stack ove
 
 ## Preview
 
-![Website Preview]()
+![Website Preview](/preview.png)
