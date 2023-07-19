@@ -37,4 +37,16 @@ $(function () {
       $(checkHour).addClass("present");
     }
   }
+
+  for (let i = 0; i < 24; i++) {
+    var checkHour = document.getElementById("hour-" + i);
+    var saveButton = checkHour.querySelector("button");
+    var textIn = checkHour.getElementsByTagName("textarea");
+    console.log(textIn);
+    var plan = textIn.value;
+    saveButton.addEventListener("click", function () {
+      localStorage.setItem("hour" + i, plan);
+      console.log("idk");
+    });
+  }
 });
